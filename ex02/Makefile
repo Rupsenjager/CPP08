@@ -1,8 +1,8 @@
-NAME = span
+NAME = abomination
 
 FLAGS = c++ -Wall -Wextra -Werror -std=c++20
 
-SRC = main.cpp Span.cpp
+SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
