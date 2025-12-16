@@ -28,7 +28,7 @@ Span& Span::operator=(const Span& other)
 
 void Span::addNumber(int n)
 {
-    if(_array.size() == _maximum)
+    if(_array.size() >= _maximum)
         throw(std::runtime_error("Array limit has been reached."));
     _array.push_back(n);
 }

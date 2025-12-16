@@ -1,4 +1,5 @@
 #include "Span.hpp"
+#include <cstdlib>
 
 int main()
 {
@@ -47,8 +48,25 @@ int main()
         std::cout << "Exception caught: " << e.what() << std::endl;
     }
 
-    //5 ADD 100000 number copy with iterator test !
-    
+    //5 
+    std::cout << "\nLarge test(10000 numbers): \n";
+    Span bigSpan(10000);
+    std::vector<int> bigVector;
+
+    for(int i = 0; i < 10000; i++)
+        bigVector.push_back(i);
+
+    try
+    {
+        bigSpan.addNumber(bigVector.begin(), bigVector.end());
+        std::cout << "Shortest span: " << bigSpan.shortestSpan() << std::endl;
+        std::cout << "Longest span: " << bigSpan.longestSpan() << std::endl;
+        
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << "Exception caught: " << e.what() << std::endl;
+    }
     return 0;
 }
 
